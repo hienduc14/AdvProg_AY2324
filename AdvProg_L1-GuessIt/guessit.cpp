@@ -47,7 +47,8 @@ string getAnswer(int number, int randomNumber) {
               If number is equal randomNumber, the answer is "Congratulation! You win."
     ***/
     string answer;
-    return ( (number == randomNumber) ? string("Correct") : string("Wrong") );
+    if( number == randomNumber ) return string("Congratulation! You win.");
+    return ( (number < randomNumber) ? string("Your number is too small") : string("Your number is too big") );
 }
 
 
@@ -60,7 +61,7 @@ string getAnswer(int number, int randomNumber) {
 bool checkSuccess(string answer) {
     // TODO: return the result after checking that player guessed right or wrong
 
-    return (answer == string("Correct") ? true : false );
+    return (answer == string("Congratulation! You win.") ? true : false );
 }
 
 
@@ -87,7 +88,7 @@ bool checkContinuePlaying(char isContinued) {
 char getPlayerOpinion() {
     // TODO: Ask the player about continue playing and return the player's choice
     char isContinued;
-    cout << "Do you want to play again?\n" << "Y/N";
+    cout << "Do you want to play again?\n" << "Y/N\n";
     cin >> isContinued;
     return isContinued;
 }
