@@ -48,7 +48,7 @@ string getAnswer(int number, int randomNumber) {
     ***/
     string answer;
     if( number == randomNumber ) return string("Congratulation! You win.");
-    return ( (number < randomNumber) ? string("Your number is too small") : string("Your number is too big") );
+    return ( (number < randomNumber) ? string("Your number is lower") : string("Your number is higher") );
 }
 
 
